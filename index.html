@@ -4,19 +4,65 @@
   <meta charset="UTF-8">
   <title>WholesomeOS 💾</title>
   <style>
-    :root{--bg:#ffe9ec;--accent:#e91e63;}
-    body{margin:0;height:100vh;display:grid;place-items:center;background:var(--bg);font-family:system-ui;text-align:center;color:#444;}
-    .heart{font-size:5rem;animation:beat 1.2s infinite;}
-    @keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
-    .txt{margin-top:1rem;font-size:1.8rem;}
-    small{display:block;margin-top:.5rem;opacity:.7;}
+    :root{--bg:#ffe9ec;--accent:#e91e63;--radius:12px;}
+    body{margin:0;height:100vh;display:grid;place-items:center;background:var(--bg);font-family:system-ui;color:#444;}
+    .desktop{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;align-items:center;padding:2rem;}
+    .icon{width:90px;text-align:center;cursor:pointer;transition:transform .2s;}
+    .icon:hover{transform:scale(1.1);}
+    .ico{font-size:2.5rem;margin-bottom:.3rem;}
+    .lbl{font-size:.9rem;}
+    .heart{position:fixed;bottom:1rem;right:1rem;font-size:1.5rem;opacity:.7;}
   </style>
 </head>
 <body>
-  <div>
-    <div class="heart">💾</div>
-    <div class="txt">Hello Hazem ♥️<br>na7bek barch</div>
-    <small>Wallpaper #1 • 20 Oct 2025</small>
+  <div class="desktop">
+
+    <!-- 1. Days-Together Live Counter -->
+    <div class="icon" onclick="alert('Every second with you is +1 ❤️')">
+      <div class="ico">📅</div>
+      <div class="lbl" id="days">… days</div>
+    </div>
+
+    <!-- 2. Rouheyy Mail (voice-note quote) -->
+    <div class="icon" onclick="alert(mailQuote)">
+      <div class="ico">💌</div>
+      <div class="lbl">Rouheyy Mail</div>
+    </div>
+
+    <!-- 3. Funny Reels Bin -->
+    <div class="icon" onclick="alert(reelQuote)">
+      <div class="ico">🎞️</div>
+      <div class="lbl">Funny Reels</div>
+    </div>
+
+    <!-- 4. Best-Quote Vault -->
+    <div class="icon" onclick="alert(bestQuote)">
+      <div class="ico">💬</div>
+      <div class="lbl">Best Quotes</div>
+    </div>
+
+    <!-- 5. Italy Drive (memories) -->
+    <div class="icon" onclick="alert(italyQuote)">
+      <div class="ico">🗺️</div>
+      <div class="lbl">Italy Drive</div>
+    </div>
+
   </div>
+
+  <div class="heart">💾</div>
+
+  <script>
+    /* ---------- CONFIGURE WITH TXT DATA ---------- */
+    const startDate = new Date('2025-06-04');      // first msg in txt
+    const mailQuote = "Hazem: ‘Rouheyy tahen, intyy roud balik 3ale rou7ek’ ♥️";
+    const reelQuote = "Isra: ‘Barbie jail 😂 phone rescued from Dreamhouse!’";
+    const bestQuote  = "Hazem: ‘Ta3ref intyy wen sakna? Fe glb.’ ❤️";
+    const italyQuote = "Shared gelato pin #3: ‘na7bek barch under lemon sky’ 🍋";
+
+    /* ---------- LIVE DAY COUNTER ---------- */
+    const today = new Date();
+    const diff  = Math.floor((today - startDate) / (1000*60*60*24));
+    document.getElementById('days').textContent = diff + ' days';
+  </script>
 </body>
 </html>
