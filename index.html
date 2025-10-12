@@ -4,16 +4,19 @@
   <meta charset="UTF-8">
   <title>WholesomeOS 💾</title>
   <style>
-    body{margin:0;background:#fff1f2;font-family:system-ui;display:grid;place-items:center;height:100vh;text-align:center;}
-    h1{color:#e91e63;font-size:3rem;margin-bottom:0.5rem;}
-    p{font-size:1.5rem;color:#444;}
+    :root{--bg:#ffe9ec;--accent:#e91e63;}
+    body{margin:0;height:100vh;display:grid;place-items:center;background:var(--bg);font-family:system-ui;text-align:center;color:#444;}
+    .heart{font-size:5rem;animation:beat 1.2s infinite;}
+    @keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+    .txt{margin-top:1rem;font-size:1.8rem;}
+    small{display:block;margin-top:.5rem;opacity:.7;}
   </style>
 </head>
 <body>
   <div>
-    <h1>Hello Hazem ♥️</h1>
-    <p>na7bek barch</p>
-    <small>Built with love • 20 Oct 2025</small>
+    <div class="heart">💾</div>
+    <div class="txt">Hello Hazem ♥️<br>na7bek barch</div>
+    <small>Wallpaper #1 • 20 Oct 2025</small>
   </div>
 </body>
 </html>
